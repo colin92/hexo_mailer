@@ -1,0 +1,31 @@
+<!Doctype>
+<html>
+<head><meta charset='utf-8' /></head>
+<body>
+  <p>Hi <%= first_name %>,</p>
+  <br>
+  <p>
+    I hope you are well. Its been about <%= months_since_contact %> months 
+    since we last spoke. I wanted to make sure you are aware of the latest 
+    updates from my blog. I started it recently to chronicle my experience as 
+    a Fullstack Academy student. 
+  </p>
+  <p>
+    You can find my blog here:
+    <a href='http://colin92.github.io'>My Blog</a>
+  </p>
+  <p>
+    And Here are some of my latest entries:
+    <% latest_posts.forEach(function(post) { %>
+      <a href='<%= post['link']['href'] %>'><h3><%= post['title'] %></h3></a>
+      <h5><%= (new Date(post['published'])) %></h5>
+      
+    <% }); %>
+  </p>
+  <p>
+    Be sure to look for the latest from the blog!<br>
+    -Colin Meret
+  </p>
+
+</body>
+</html>
